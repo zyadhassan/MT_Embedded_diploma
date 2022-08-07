@@ -407,21 +407,6 @@ void Q21(void){
 	return;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 int main(void){
 	// call any Question as function like  Q13() where it's the function of the solution of Question 13
 return 0;

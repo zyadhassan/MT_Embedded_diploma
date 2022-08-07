@@ -243,6 +243,169 @@ void Q13(void){
 	return;
 }
 
+// Question 14 in the Assignment 1
+void Q14(void){
+	// ASCII of A is 65
+	// ASCII of Z is 90
+	for(int i = 65;i<=90;i++){
+		printf("%c\n",i);
+	}
+	return;
+}
+
+// Question 15 in the Assignment 1
+void Q15(void){
+	int num;
+	int power;
+
+	printf("Enter the number?\n ");
+	fflush(stdout);
+	scanf("%d", &num);
+	printf("Enter the power?\n ");
+	fflush(stdout);
+	scanf("%d", &power);
+
+	int result=(int)(pow(num,power)+ 1e-9);
+	/* the pow() takes double and return double and depend on compiler
+	sometimes it returns instead of 25 it returns 24.9999 so in int it will be 24
+	to solve that we add (1e-9) before it casted to int
+
+	*/
+	printf("The result is %d. ",result);
+
+
+	return;
+}
+
+// Question 16 in the Assignment 1
+void Q16(void){
+	int num;
+	int reverse=0;
+
+
+	printf("Enter the number?\n ");
+	fflush(stdout);
+	scanf("%d", &num);
+
+	while(num!=0){
+		int re=num%10;
+		reverse=re+reverse*10;
+		num/=10;
+	}
+
+
+	printf("The result is %d. ",reverse);
+
+
+	return;
+}
+
+// Question 17 in the Assignment 1
+void Q17(void){
+	int num;
+	int count=0;
+
+	printf("Enter the number?\n ");
+	fflush(stdout);
+	scanf("%d", &num);
+
+	for(;num>0;num/=10){
+		count++;
+	}
+
+
+
+	printf("The result is %d. ",count);
+
+
+	return;
+}
+
+// Question 18 in the Assignment 1
+void Q18(void){
+
+	int num;
+	printf("Enter the number?\n ");
+	fflush(stdout);
+	scanf("%d", &num);
+
+
+	for(int i=1;i<=num;i++){
+		for(int j=1;j<=i;j++){
+			printf("* ");
+		}
+		printf("\n");
+	}
+
+	return;
+}
+
+// Question 19 in the Assignment 1
+void Q19(void){
+	int num;
+	printf("Enter the number?\n ");
+	fflush(stdout);
+	scanf("%d", &num);
+
+
+
+	for(int i=1;i<=num;i++){
+		for(int j=i;j<=num;j++){
+			printf("* ");
+		}
+		printf("\n");
+	}
+
+	return;
+}
+
+// Question 20 in the Assignment 1
+void Q20(void){
+	int num;
+	printf("Enter the odd number?\n ");
+	fflush(stdout);
+	scanf("%d", &num);
+
+
+	for(int i=0;i<=num;i+=2){
+		int mid =(num-i)/2;
+		for(int j=0;j<mid;j++){
+			printf(" ");
+			}
+		for(int j=mid;j<=mid+i;j++){
+				printf("*");
+			}
+		for(int j=mid+i;j<num;j++){
+				printf(" ");
+			}
+		printf("\n");
+	}
+
+	return;
+}
+
+// Question 21 in the Assignment 1
+void Q21(void){
+	int num;
+	printf("Enter the number?\n ");
+	fflush(stdout);
+	scanf("%d", &num);
+	num*=2;
+
+
+	for(int i=1;i<=num;i++){
+		for(int j=1;j<=num;j++){
+			if(j==i)printf("*");
+			else if(j==(num-i+1))printf("*");
+			else printf(" ");
+
+			}
+
+		printf("\n");
+	}
+
+	return;
+}
 
 
 
@@ -260,7 +423,7 @@ void Q13(void){
 
 
 int main(void){
-	Q13();
+	// call any Question as function like  Q13() where it's the function of the solution of Question 13
 return 0;
 }
 

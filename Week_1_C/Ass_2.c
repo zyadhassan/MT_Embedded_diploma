@@ -297,8 +297,6 @@ void A2_Q10(void){
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////Main Function//////////////////////////////
 int main(void){
-
-
-	A2_Q10();
+	// call any Question as function like  A2_Q13() where it's the function of the solution of Question 13
 return 0;
 }

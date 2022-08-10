@@ -281,6 +281,244 @@ void A2_Q10(void){
 /////////////////////////////////////////////////////////////////////////
 
 
+///////////////////////////Question 11////////////////////////////////////
+int is_power(int num,int power){
+
+	while(num%power==0){
+		num/=power;
+	}
+	if (num==1)return 1;
+	else return 0;
+
+
+}
+
+
+void A2_Q11(void){
+	int num;
+	printf("Enter Number ?\n");
+	fflush(stdout);
+	scanf("%d",&num);
+	if(is_power(num,2)){
+		printf("%d is power of 2.",num);
+	}
+	else{
+		printf("%d is not power of 2.",num);
+	}
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 13////////////////////////////////////
+int floor(float num1,float num2){
+	float result;
+	result=num1+num2;
+	return (int)result;
+}
+
+void A2_Q13(void){
+	float num1,num2;
+	printf("Enter the two float Numbers ?\n");
+	fflush(stdout);
+	scanf("%f%f",&num1,&num2);
+	int result =floor(num1,num2);
+	printf("the result is %d",result);
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 14////////////////////////////////////
+int fib(int num){
+switch (num){
+case 0:
+	return 0;
+case 1:
+	return 1;
+}
+return fib(num-1)+fib(num-2);
+}
+
+void A2_Q14(void){
+	int num;
+	printf("Enter Number ?\n");
+	fflush(stdout);
+	scanf("%d",&num);
+	for(int i=0;i<=num;i++){
+		printf("%d ",fib(i));
+	}
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 15////////////////////////////////////
+
+int count_1s_32bit(unsigned int num){
+	unsigned int mask=0x80000000;
+	int count=0;
+	for (int i=0;i<32;i++){
+	unsigned int result=num&mask;
+	if(result)count++;
+	num=num<<1;
+	}
+	return count;
+}
+
+void A2_Q15(void){
+	unsigned int num;
+	printf("Enter Number ?\n");
+	fflush(stdout);
+	scanf("%d",&num);
+	printf("Number of ones in %d is %d",num,count_1s_32bit(num));
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 16////////////////////////////////////
+
+int count_1s_8bit(unsigned int num){
+	unsigned int mask=0x80;
+	int count=0;
+	for (int i=0;i<8;i++){
+	unsigned int result=num&mask;
+	if(result)count++;
+	num=num<<1;
+	}
+	return count;
+}
+
+
+void A2_Q16(void){
+	unsigned int num;
+	printf("Enter Number ?\n");
+	fflush(stdout);
+	scanf("%d",&num);
+	printf("Number of ones in %d is %d",num,count_1s_8bit(num));
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 17////////////////////////////////////
+
+int max_xor(int L ,int R){
+	int max=0;
+	for(int A=L;A<=R;A++){
+		for(int B=A;B<=R;B++){
+			int result=A^B;
+			if(result>max)max=result;
+		}
+	}
+	return max;
+}
+
+void A2_Q17(void){
+	int num1,num2;
+	printf("Enter two numbers ?\n");
+	fflush(stdout);
+	scanf("%d%d",&num1,&num2);
+	printf("The maximum value is %d",max_xor(num1,num2));
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 18////////////////////////////////////
+int can_present(int num){
+
+	for(int i =2;i<num;i++){
+		for(int j=2;j<num;j++){
+			int result=(int)(pow(i,j)+ 1e-9);
+			if(result==num)return 1;
+		}
+
+	}
+	return 0;
+}
+
+void A2_Q18(void){
+	int num;
+	printf("Enter number ?\n");
+	fflush(stdout);
+	scanf("%d",&num);
+	printf("%d can_present in p^q is %d",num,can_present(num));
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 19////////////////////////////////////
+int is_Power_Of3(int num){
+
+	while(num%3==0){
+		num/=3;
+	}
+	if (num==1)return 0;
+	else return 1;
+
+
+}
+
+void A2_Q19(void){
+	int num;
+	printf("Enter number ?\n");
+	fflush(stdout);
+	scanf("%d",&num);
+	printf("%d",is_Power_Of3(num));
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 20////////////////////////////////////
+int count_max_1s_16bit(unsigned int num){
+	unsigned int mask=0x8000;
+	int count=0;
+	int maxcount=0;
+	for (int i=0;i<16;i++){
+	unsigned int result=num&mask;
+	if(result){
+		count++;
+		if(count>=maxcount)maxcount=count;
+	}
+	else count=0;
+	num=num<<1;
+	}
+	return maxcount;
+}
+
+
+void A2_Q20(void){
+	int num;
+	printf("Enter number ?\n");
+	fflush(stdout);
+	scanf("%d",&num);
+	printf("%d",count_max_1s_16bit(num));
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 
 

@@ -176,3 +176,221 @@ void A3_Q6(void){
 	return;
 }
 /////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////Question 7////////////////////////////////////
+
+
+void A3_Q7(void){
+	int num[200];
+	int nth_elemnt;
+	printf("Enter the nth term ?\n");
+	fflush(stdout);
+	scanf("%d",&nth_elemnt);
+	int elemnt=1;
+	for(int i=0;i<=nth_elemnt;i++){
+		num[i]=elemnt;
+		elemnt+=2;
+
+	}
+	for(int i=0;i<=nth_elemnt;i++){
+			printf("%d ",num[i]);
+
+		}
+	printf("The nth term equals %d",num[nth_elemnt]);
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 8////////////////////////////////////
+
+
+void A3_Q8(void){
+	unsigned long long num[200];
+	int nth_elemnt;
+	printf("Enter the nth term ?\n");
+	fflush(stdout);
+	scanf("%d",&nth_elemnt);
+	for(int i=0;i<=nth_elemnt;i++){
+		num[i]=(unsigned long long)(pow(3,i)+ 1e-9);
+
+	}
+
+	printf("The nth term equals %Ld",num[nth_elemnt]);
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 9////////////////////////////////////
+
+
+void A3_Q9(void){
+	unsigned int num[200];
+	int nth_elemnt;
+	printf("Enter the nth Fibonacci number ?\n");
+	fflush(stdout);
+	scanf("%d",&nth_elemnt);
+	num[0]=0;
+	num[1]=1;
+	for(int i=2;i<=nth_elemnt;i++){
+		num[i]=num[i-1]+num[i-2];
+
+	}
+
+	printf("The nth term equals %d",num[nth_elemnt]);
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 10////////////////////////////////////
+
+void lowercase( char* st){
+	int i=0;
+	while(st[i]!='\0'){
+		if(st[i]>=65 && st[i]<= 90){
+			st[i]=st[i]+32;
+		}
+		i++;
+	}
+
+
+	return;
+}
+
+
+void A3_Q10(void){
+	char str[STRSIZE];
+	printf("Enter the sentence?\n");
+	fflush(stdout);
+	gets(str);
+	lowercase(str);
+	printf("%s",str);
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 11////////////////////////////////////
+
+int str_freq(char* st,char ch){
+	int i=0;
+	int counter=0;
+	lowercase(st);
+	if(ch>=65 && ch<=90)ch=ch+32;
+	while(st[i]!='\0'){
+		if(st[i]==ch){
+			counter++;
+		}
+		i++;
+	}
+
+
+	return counter;
+}
+
+
+void A3_Q11(void){
+	char str[STRSIZE];
+	char character;
+	printf("Enter the sentence?\n");
+	fflush(stdout);
+	gets(str);
+	printf("Enter the Character?\n");
+	fflush(stdout);
+	scanf("%c",&character);
+	int freq=str_freq(str,character);
+	printf("the freq equals %d",freq);
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 12////////////////////////////////////
+
+int str_length( char* st){
+	int i=0;
+	int counter=0;
+	while(st[i]!='\0'){
+		counter++;
+		i++;
+	}
+
+
+	return counter;
+}
+
+
+void A3_Q12(void){
+	char str[STRSIZE];
+	printf("Enter the sentence?\n");
+	fflush(stdout);
+	gets(str);
+	int len= str_length(str);
+	printf("the length of the string equals %d",len);
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 13////////////////////////////////////
+
+void alph_only( char* st){
+	char new_st[STRSIZE];
+	int i=0;
+	int j=0;
+	while(st[i]!='\0'){
+		if(st[i]>=65 && st[i]<= 90){
+			new_st[j]=st[i];
+			j++;
+		}
+		else if(st[i]>=97 && st[i]<= 122){
+			new_st[j]=st[i];
+			j++;
+		}
+		i++;
+	}
+	new_st[j]='\0';
+	for(int k=0;k<=j;k++){
+		st[k]=new_st[k];
+	}
+
+
+	return;
+}
+
+
+void A3_Q13(void){
+	char str[STRSIZE];
+	printf("Enter the sentence?\n");
+	fflush(stdout);
+	gets(str);
+	alph_only(str);
+	printf("%s",str);
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////

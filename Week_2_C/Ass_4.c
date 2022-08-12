@@ -6,3 +6,39 @@
  */
 
 #include <stdio.h>
+
+
+///////////////////////////Question 1////////////////////////////////////
+int sum_by_pointer(int*pointer,int size){
+	int sum=0;
+	for(int i=0;i<size;i++){
+		sum+=pointer[i];
+	}
+
+	return sum;
+
+}
+
+void A4_Q1(void){
+	int arr[5]={1,2,3,4,5};
+	int* ptr =arr;
+	printf("the sum is %d",sum_by_pointer(arr,5));
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////
+int main(void){
+
+
+	A4_Q1();
+return 0;
+}

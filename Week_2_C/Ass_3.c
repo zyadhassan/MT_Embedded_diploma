@@ -496,28 +496,21 @@ void A3_Q16(void){
 }
 /////////////////////////////////////////////////////////////////////////
 
-
 ///////////////////////////Question 17////////////////////////////////////
 //   void swap(int*num1,int*num2) use this function to swap between two numbers
 int* swap_arr(int*arr1,int arr1_size,int*arr2,int arr2_size){
-	int* rest[arr1_size-arr2_size];
 	int i=0;
 	for(;i<arr2_size;i++){
 		swap(&arr1[i],&arr2[i]);
 	}
-	int j=0;
-	for(;i<arr1_size;i++){
-		rest[j]=arr1[i];
-		j++;
-	}
-	return rest;
-// wrong still not solved
+	return &arr1[i];
+	//return pointer to the rest of the longest arry
 
 }
 void A3_Q17(void){
 	int arr1[10]={1,2,3,4,5,6,7,8,9,10};
 	int arr2[5]={10,20,30,40,50};
-	int* rest=swap_arr(arr1,10,arr2,5);
+	int* ptr=swap_arr(arr1,10,arr2,5);
 
 
 
@@ -534,9 +527,9 @@ void A3_Q17(void){
 		}
 	printf("\n");
 
-	//for(int i =0;i<5;i++){
-		//		printf("%d ",rest[i]);
-			//}
+	for(int i =0;i<5;i++){
+				printf("%d ",*(ptr+i));
+			}
 
 
 

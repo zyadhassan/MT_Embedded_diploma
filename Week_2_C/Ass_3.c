@@ -394,3 +394,153 @@ void A3_Q13(void){
 	return;
 }
 /////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 14////////////////////////////////////
+void reverse_string(char*st){
+	int i=0,j=0;
+	char reverse[STRSIZE];
+	while(st[i]!='\0'){
+			reverse[i]=st[i];
+			i++;
+	}
+	i--;
+	char first=st[0];
+	while(reverse[i]!=first){
+		st[j]=reverse[i];
+		i--;
+		j++;
+	}
+	st[j]=first;
+	return;
+}
+
+
+void A3_Q14(void){
+	char str[STRSIZE];
+	printf("Enter the sentence?\n");
+	fflush(stdout);
+	gets(str);
+	reverse_string(str);
+	printf("%s",str);
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 15////////////////////////////////////
+void concate_string(char* str1,char* str2){
+	int j=0,i=0;
+	while(str1[i]!='\0'){
+		i++;
+	}
+	while(str2[j]!='\0'){
+		str1[i]=str2[j];
+		i++;
+		j++;
+	}
+	str1[i]='\0';
+	return;
+
+
+}
+
+void A3_Q15(void){
+	char str1[STRSIZE];
+	char str2[STRSIZE];
+	printf("Enter the first sentence?\n");
+	fflush(stdout);
+	gets(str1);
+	printf("Enter the second sentence?\n");
+	fflush(stdout);
+	gets(str2);
+	concate_string(str1,str2);
+	printf("%s",str1);
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 16////////////////////////////////////
+void reverse_arr(int* arr,int size){
+	int reverse[size];
+	int i,j;
+	for(i=0;i<size;i++){
+		reverse[i]=arr[i];
+	}
+	i--;
+
+	for(j=0;j<size;j++){
+		arr[j]=reverse[i];
+		i--;
+	}
+	return;
+}
+
+void A3_Q16(void){
+	int arr[10]={1,2,3,4,5,6,7,8,9,10};
+	reverse_arr(arr,10);
+	for(int i =0;i<10;i++){
+		printf("%d ",arr[i]);
+	}
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 17////////////////////////////////////
+//   void swap(int*num1,int*num2) use this function to swap between two numbers
+int* swap_arr(int*arr1,int arr1_size,int*arr2,int arr2_size){
+	int* rest[arr1_size-arr2_size];
+	int i=0;
+	for(;i<arr2_size;i++){
+		swap(&arr1[i],&arr2[i]);
+	}
+	int j=0;
+	for(;i<arr1_size;i++){
+		rest[j]=arr1[i];
+		j++;
+	}
+	return rest;
+// wrong still not solved
+
+}
+void A3_Q17(void){
+	int arr1[10]={1,2,3,4,5,6,7,8,9,10};
+	int arr2[5]={10,20,30,40,50};
+	int* rest=swap_arr(arr1,10,arr2,5);
+
+
+
+
+
+
+	for(int i =0;i<5;i++){
+		printf("%d ",arr1[i]);
+
+	}
+	printf("\n");
+	for(int i =0;i<5;i++){
+			printf("%d ",arr2[i]);
+		}
+	printf("\n");
+
+	//for(int i =0;i<5;i++){
+		//		printf("%d ",rest[i]);
+			//}
+
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////

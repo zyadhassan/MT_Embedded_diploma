@@ -537,3 +537,197 @@ void A3_Q17(void){
 	return;
 }
 /////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 18////////////////////////////////////
+int consecutive_maxSum(int* arr,int size){
+	int max=0;
+	for(int i =0;i<size;i++){
+		int sum=arr[i];
+		for(int j=i+1;arr[j]==arr[i];j++,i++){
+			sum+=arr[j];
+			if(sum>max)max=sum;
+		}
+	}
+
+	return max;
+}
+
+void A3_Q18(void){
+int arr[100]={1,2,1,2,1,1,1,1,2,2,1,2,1,2,1,1,1,1,2,2,1,2,1,2,1,1,1,1,2,2,1,2,1,2,1,1,1,1,2,2,1,2,1,2,1,1,1,1,2,2,1,2,1,2,1,1,1,1,2,2};
+int max_count_sum=consecutive_maxSum(arr,100);
+printf("%d",max_count_sum);
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 19////////////////////////////////////
+int arr_compare(int*arr1,int*arr2,int size){ // two arrays should be of the same size
+	for(int i=0,j=0;i<size ;i++,j++){
+		if(arr1[i] != arr2[j]){
+			return 1;
+		}
+	}
+	return 0;
+}
+
+
+void A3_Q19(void){
+	int arr1[10]={0,1,3,3,4,5,6,7,8,9};
+	int arr2[10]={0,1,2,3,4,5,6,7,8,9};
+
+	printf("%d",arr_compare(arr1,arr2,10));
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 20,21 ////////////////////////////////////
+
+typedef unsigned char uint8;
+
+void full_arr_ex(int upper,int lower,uint8*arr,int*ptrsize){
+	uint8*ptr=arr;
+	int size=0;
+	int num=upper-1;
+	if(lower>=upper){arr[0]=0xFF;arr[1]=0xFF;*ptrsize=2;return;}
+	for(int i=0;num>lower;i++){
+		ptr[i]=num;
+		size++;
+		num--;
+
+	}
+	*ptrsize=size;
+	return;
+}
+void full_arr_inc(int upper,int lower,uint8*arr,int*ptrsize){
+	uint8*ptr=arr;
+	int size=0;
+	int num=upper;
+	if(lower>=upper){arr[0]=0xFF;arr[1]=0xFF;*ptrsize=2;return;}
+	for(int i=0;num>=lower;i++){
+		ptr[i]=num;
+		size++;
+		num--;
+
+	}
+	*ptrsize=size;
+	return;
+}
+
+void A3_Q20_21(void){
+	uint8 arr[256];
+	int size;
+	int* ptrsize=&size;
+
+
+
+	// Question 20
+	full_arr_ex(10,5,arr,ptrsize);
+	for(int i =0;i<size;i++){
+			printf("%d ",arr[i]);
+		}
+	printf("\n");
+
+	// Question 21
+	full_arr_inc(10,5,arr,ptrsize);
+	for(int i =0;i<size;i++){
+		printf("%d ",arr[i]);
+	}
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 22////////////////////////////////////
+int removeDuplicates(int arr_old[], int n_old, int arr_new[], int *n_new){
+	if(n_old==0)return 0;
+	int j=1;
+	arr_new[0]=arr_old[0];
+	(*n_new)++;
+	for(int i=1;i<n_old;i++){
+		if(arr_old[i]==arr_old[i-1])continue;
+		else{
+			*n_new = *n_new+1;
+			arr_new[j]=arr_old[i];
+			j++;
+		}
+	}
+
+
+
+	return 1;
+
+
+}
+
+
+void A3_Q22(void){
+	int arr[10]={0,0,1,1,2,2,3,5,5,6,7}; //input: Sorted array
+	int newarr2[10];
+	int newsize=0;
+	int* ptrsize=&newsize;
+	removeDuplicates(arr, 10, newarr2, ptrsize);
+	for(int i=0;i<newsize;i++){
+		printf("%d ",newarr2[i]);
+	}
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 23////////////////////////////////////
+void count_freq(char*str,char*freq){
+	int i=0;
+	while(str[i]!='\0'){
+		freq[str[i]]++;
+		i++;
+	}
+}
+
+
+void A3_Q23(void){
+	char str[100];
+	char freq[256]={0};
+
+	printf("Enter String !\n");
+	fflush(stdout);
+	gets(str);
+	count_freq(str,freq);
+	for(int i=0;i<256;i++){
+		if(freq[i])printf("%c --> %d times\n",i,freq[i]);
+	}
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 24////////////////////////////////////
+int sec_largest(int*arr,int size){
+	int max=arr[0],last_max=arr[0];
+	for(int i=0;i<size;i++){
+		if(arr[i]>max){
+			last_max=max;
+			max=arr[i];
+		}
+	}
+	return last_max;
+}
+void A3_Q24(void){
+	int arr[10]={0,1,2,3,14,25,6,7,8,9};
+
+	int second_max=sec_largest(arr,10);
+		printf("%d",second_max);
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+

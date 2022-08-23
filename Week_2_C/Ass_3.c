@@ -732,7 +732,6 @@ void A3_Q24(void){
 
 /////////////////////////////////////////////////////////////////////////
 int main(void){
-
-	A3_Q1();
+	// call any Question as function like  A3_Q13() where it's a function of the solution of Question 13
 return 0;
 }

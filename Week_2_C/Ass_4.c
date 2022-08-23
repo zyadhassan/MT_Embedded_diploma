@@ -37,8 +37,6 @@ void A4_Q1(void){
 
 /////////////////////////////////////////////////////////////////////////
 int main(void){
-
-
-	A4_Q1();
+	// call any Question as function like  A4_Q1() where it's a function of the solution of Question 1
 return 0;
 }

@@ -10,7 +10,7 @@ SW engineering <br />
 
 
 ## C-course
-4 weeks , 6 Assignments<br /><br />
+4 weeks , 6 Assignments<br />
 ### Basics
 Data types<br />
 Casting<br />

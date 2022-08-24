@@ -243,6 +243,104 @@ void A4_Q9(void){
 /////////////////////////////////////////////////////////////////////////
 
 
+///////////////////////////Question 10////////////////////////////////////
+void swap_pointers(int**ptr1,int**ptr2){
+	int* temp=*ptr1;
+	*ptr1=*ptr2;
+	*ptr2=temp;
+}
+void A4_Q10(void){
+	int y=5,x=10;
+	int*ptrtox=&x;
+	int*ptrtoy=&y;
+	printf("ptrTox = %p \t ptrTOy = %p \n",ptrtox,ptrtoy);
+	swap_pointers(&ptrtox,&ptrtoy);
+	printf("ptrTox = %p \t ptrTOy = %p \n",ptrtox,ptrtoy);
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 11////////////////////////////////////
+void swap_16bits_ptr(int*number){
+	short*first=number;
+	short*second=(first+1);
+	short temp=*first;
+	*first=*second;
+	*second=temp;
+	return;
+}
+void swap_16bits_union(int*number){
+	typedef union {
+		int x;
+		short arr[2];
+	}swap ;
+	swap block;
+	block.x=*number;
+	short temp =block.arr[0];
+	block.arr[0]=block.arr[1];
+	block.arr[1]=temp;
+	*number=block.x;
+	return;
+}
+void swap_16bits_bitwise(int*number){
+	int mask=0xFFFF0000;
+	int temp1 =*number&mask;
+	int temp2=*number&(~mask);
+	temp1>>=16;
+	temp1=temp1&(~mask);// to make the unwanted bits equal 0
+	temp2<<=16;
+	*number=temp1+temp2;
+	return;
+}
+
+void A4_Q11(void){
+	int x =0xFF0A1122;
+	printf("X = %x\n",x);
+	swap_16bits_bitwise(&x);
+	printf("bit-wise way : X = %x\n",x);
+	swap_16bits_union(&x);
+	printf("union way    : X = %x\n",x);
+	swap_16bits_ptr(&x);
+	printf("pointers way : X = %x\n",x);
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 12////////////////////////////////////
+int oddrepatednumber(int*arr,int size){
+	int num;
+	for(int i=0;i<size;i++){
+		 num=arr[i];
+		int count=0;
+		for(int j =0;j<size;j++){
+			if(arr[j]==num)count++;
+		}
+		if(count%2!=0){
+			return num;
+		}
+		else{continue;}
+	}
+}
+
+
+
+void A4_Q12(void){
+	int arr[15]={1,1,1,1,2,2,2,3,3,3,3,0,0,0,0};
+	printf("%d ",oddrepatednumber(arr,14));
+
+
+
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
 
 
 

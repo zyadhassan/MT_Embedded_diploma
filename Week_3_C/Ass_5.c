@@ -234,16 +234,10 @@ void A5_Q7(void){
 /////////////////////////////////////////////////////////////////////////
 
 
-
 int main(void){
-
-
-	A5_Q1();
+	// call any Question as function like  A5_Q1() where it's a function of the solution of Question 1
 return 0;
 }
-
-
-
 
 
 

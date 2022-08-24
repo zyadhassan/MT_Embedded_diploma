@@ -9,9 +9,9 @@ Interfacing II<br />
 SW engineering <br />
 
 
-## C-course
+# C-course
 4 weeks , 6 Assignments<br />
-### Basics
+## Basics
 Data types<br />
 Casting<br />
 Operators<br />
@@ -26,7 +26,7 @@ Unions<br />
 Enumerations<br />
 Typedef Keyword<br />
 <br />
-### Data structre
+## Data structre
 Static Memory Allocation<br />
 Arrays<br />
 Dynamic Memory Allocation<br />

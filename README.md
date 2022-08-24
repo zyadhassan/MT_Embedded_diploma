@@ -26,7 +26,6 @@ Unions<br />
 Enumerations<br />
 Typedef Keyword<br />
 <br />
-<br />
 ### Data structre
 Static Memory Allocation<br />
 Arrays<br />

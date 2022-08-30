@@ -34,4 +34,6 @@ Single Linked List<br />
 Linked List Basic Operations<br />
 Double Linked List<br />
 Circular Linked List <br />
+Stack <br />
+Queue <br />
 

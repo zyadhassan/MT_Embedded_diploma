@@ -171,8 +171,109 @@ void A6_Q2(void){
 /////////////////////////////////////////////////////////////////////////
 
 
+///////////////////////////Question 3////////////////////////////////////
+int Last_nthElment(int nth){
+	if(head==NULL){
+		printf("The Linked List is Empty");
+		return -1;
+	}
+	struct node* ptr5=head;
+	for(int i=0;i<nth;i++){
+		if(ptr5->next==NULL)return head->data;
+		else ptr5=ptr5->next;
+	}
+	struct node* ptr=head;
+	while(ptr5!=NULL){
+		ptr5=ptr5->next;
+		ptr=ptr->next;
+	}
+	return ptr->data;
+
+}
+
+void A6_Q3(void){
+	insertAtLast(0);
+	insertAtLast(1);
+	insertAtLast(2);
+	insertAtLast(3);
+	insertAtLast(4);
+	insertAtLast(5);
+	insertAtLast(6);
+	insertAtLast(1);
+	insertAtLast(10);
+	insertAtLast(25);
+	insertAtLast(7);
+	insertAtLast(8);
+	printf("%d",Last_nthElment(10));
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
 
 
+///////////////////////////Question 4////////////////////////////////////
+int sum_Linked(){
+	int sum=0;
+	struct node*ptr =head ;
+	while(ptr!=NULL){
+		sum+=ptr->data;
+		ptr=ptr->next;
+	}
+	return sum;
+}
+
+void A6_Q4(void){
+	insertAtLast(0);
+	insertAtLast(1);
+	insertAtLast(2);
+	insertAtLast(3);
+	insertAtLast(4);
+	insertAtLast(5);
+	insertAtLast(6);
+	insertAtLast(1);
+	insertAtLast(10);
+	insertAtLast(25);
+	insertAtLast(7);
+	insertAtLast(8);
+	printf("%d",sum_Linked());
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////Question 5////////////////////////////////////
+int max_linked(){
+	int max=head->data;
+	struct node * ptr=head;
+	while(ptr!=NULL){
+		if(ptr->data > max){
+			max=ptr->data;
+		}
+		ptr=ptr->next;
+	}
+
+
+
+
+	return max;
+}
+
+void A6_Q5(void){
+	insertAtLast(0);
+	insertAtLast(1);
+	insertAtLast(2);
+	insertAtLast(3);
+	insertAtLast(4);
+	insertAtLast(5);
+	insertAtLast(6);
+	insertAtLast(1);
+	insertAtLast(10);
+	insertAtLast(25);
+	insertAtLast(7);
+	insertAtLast(8);
+	printf("%d",max_linked());
+	return;
+}
+/////////////////////////////////////////////////////////////////////////
 
 
 
@@ -181,7 +282,7 @@ void A6_Q2(void){
 int main(void){
 
 
-	A6_Q2();
+	A6_Q5();
 return 0;
 }
 

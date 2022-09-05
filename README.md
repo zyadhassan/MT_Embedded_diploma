@@ -25,6 +25,7 @@ Structures<br />
 Unions<br />
 Enumerations<br />
 Typedef Keyword<br />
+Notes on Commend Line <br />
 <br />
 ## Data structre
 Static Memory Allocation<br />
@@ -36,4 +37,8 @@ Double Linked List<br />
 Circular Linked List <br />
 Stack <br />
 Queue <br />
+
+# Interfacing I
+Working on AVR processor on ATmega32 microcontroller <br />
+
 

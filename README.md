@@ -40,5 +40,18 @@ Queue <br />
 
 # Interfacing I
 Working on AVR processor on ATmega32 microcontroller <br />
+## I/O Ports 
+Working on the AVR processor atmega32 <br />
+Practicing on how to read Inputs and take actions on the Output Ports and working on many Ptojects <br />
+## External Interrupts 
+Practicing on The External Interrupts and implement projects on it <br />
+## Timers
+Practicing on The External Interrupts and implement projects on it and work on PWM , Overflow mode and Compare mode <br />
+## Watchdog Timer
+Implementing the Watchdog module and know its main concept<br />
+## DC-Motors
+Practicing on The DC-Motors and implement projects on it and work on servo motor , stepper motor and reguler dc motor <br />
+# Embedded-C course 
+## Build Process Concepts 
 
 
